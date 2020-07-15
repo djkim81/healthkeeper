@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: healthkeeper
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: healthkeeper
+    spec:
+      containers:
+        - name: healthkeeper
+          image:  hrsacr.azurecr.io/healthkeeper:latest
+          ports:
+            - containerPort: 8080
