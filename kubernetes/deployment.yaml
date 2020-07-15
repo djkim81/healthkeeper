@@ -4,6 +4,9 @@ metadata:
   name: healthkeeper
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: healthkeeper
   template:
     metadata:
       labels:
